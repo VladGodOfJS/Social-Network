@@ -56,58 +56,10 @@ table {
 }
 
 
-//header
-
-.header{
-    background: #222835;
-}
 
 
 .main-wrap{
     display: flex;
     justify-content: space-between;
-}
-
-//Main
-
-.main-inner{
-    display: flex;
-    justify-content: space-between;
-}
-
-//Leftbar
-
-.leftbar{
-    flex: 0 1 20%;
-    background: #222835;
-
-    .nav{
-        &__link{
-            font-family: 'Open Sans', sans-serif;
-            color: #fff;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: 400;
-        }
-    }
-}
-
-//Profile
-
-.profile{
-    flex: 0 1 78%;
-}
-
-.profile-bg{
-    width: 100%;
-    height: 200px;
-    border: 1px solid;
-
-    &__img{
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-        border: 1px solid red;
-    }
 }
 

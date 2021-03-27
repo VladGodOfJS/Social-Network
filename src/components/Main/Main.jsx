@@ -1,11 +1,12 @@
-import Leftbar from "./Leftbar";
-import Profile from "./Profile";
+import Leftbar from "./Leftbar/Leftbar";
+import Profile from "./Profile/Profile";
+import s from './Main.module.scss';
 
 function Main() {
     return (
-     <div className="main">
+     <div className={s.main}>
           <div className="container">
-             <div className="main-inner">
+             <div className={s.inner}>
              <Leftbar/>
               <Profile/>
              </div>

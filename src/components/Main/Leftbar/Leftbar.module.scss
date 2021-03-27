@@ -1,0 +1,17 @@
+//Leftbar
+
+.leftbar {
+  flex: 0 1 20%;
+  background: #222835;
+
+  .item {
+    margin-top: 20px;
+  }
+
+  .link {
+    color: #fff;
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    text-decoration: none;
+  }
+}
