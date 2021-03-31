@@ -4,7 +4,7 @@ import Dialogs from "./Dialogs/Dialogs";
 import Music from "./Music/Music";
 import News from "./News/News";
 import Settings from "./Settings/Settings";
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { Route } from "react-router-dom";
 import s from "./Main.module.scss";
 
 function Main() {
