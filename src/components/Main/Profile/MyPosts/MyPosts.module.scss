@@ -1,4 +1,25 @@
 .my_posts{
     display: flex;
     flex-direction: column;
+    border: 1px solid;
+    padding: 0 10px;
+}
+
+.btn{
+    background: #0d58c8;
+    width: 150px;
+    padding: 10px 25px;
+    margin-top: 20px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    outline: none;
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+    &:hover{
+        border: 1px solid #0d58c8;
+        transition: all ease .3s;
+        background: grey;
+    }
 }

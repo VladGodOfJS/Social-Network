@@ -3,9 +3,9 @@
 .leftbar {
   flex: 0 1 20%;
   background: #222835;
+  padding: 0 15px;
 
   .nav {
-    padding: 15px;
     .item {
       margin-top: 20px;
     }
@@ -18,7 +18,7 @@
     }
 
     .link.active {
-      color: red;
+      color:#0d58c8;
     }
   }
 }
