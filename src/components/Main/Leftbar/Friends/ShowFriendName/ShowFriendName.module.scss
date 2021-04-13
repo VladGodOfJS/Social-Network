@@ -1,0 +1,16 @@
+.name_item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .ava{
+        width: 45px;
+        border-radius: 4px;
+       
+    }
+    .name{
+        color: #fff;
+        font-size: 12px;
+        margin-top: 5px;
+    }
+}

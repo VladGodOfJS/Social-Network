@@ -1,18 +1,16 @@
 .dialogs{
     display: flex;
     padding-top: 20px;
+  
 }
 
 
 .names_list{
-    max-width: 200px;
-    width: 100%;
-    border: 1px solid;
+   flex: 0 1 20%;
  
 }
 .messages_list{
-    max-width: 200px;
-    width: 100%;
+    flex: 0 1 80%;
  
 }
 

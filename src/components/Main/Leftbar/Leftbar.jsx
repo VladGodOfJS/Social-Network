@@ -1,8 +1,10 @@
 import s from'./Leftbar.module.scss';
 import React from 'react';
 import {NavLink} from 'react-router-dom';
+import Friends from './Friends/Friends';
 
-const Leftbar =()=>{
+const Leftbar =(props)=>{
+
     return(
        <div className={s.leftbar}>
            <ul className={s.nav} >
@@ -15,6 +17,7 @@ const Leftbar =()=>{
                <li className={s.item} ><NavLink className={s.link} activeClassName={s.active} to="/settings"> Settings</NavLink></li>
 
            </ul>
+           <Friends state={props.state}/>
        </div>
     );
 }
