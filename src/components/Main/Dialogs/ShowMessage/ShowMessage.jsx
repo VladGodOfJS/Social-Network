@@ -5,6 +5,4 @@ const ShowMessage=(props)=>{
         <div className={s.item}>{props.text}</div>
     );
 }
-
-
 export default ShowMessage;

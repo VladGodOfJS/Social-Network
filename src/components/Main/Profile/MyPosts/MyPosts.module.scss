@@ -7,14 +7,16 @@
 
 .btn{
     background: #0d58c8;
-    width: 150px;
-    padding: 10px 25px;
+    width: 140px;
+    height: 35px;
+    line-height: 32px;
     margin-top: 20px;
     border: 1px solid transparent;
     border-radius: 3px;
     outline: none;
     color: #fff;
     font-size: 14px;
+    
     text-transform: uppercase;
     cursor: pointer;
     &:hover{

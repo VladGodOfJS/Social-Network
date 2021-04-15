@@ -11,7 +11,7 @@ function App(props) {
     <BrowserRouter>
       <div className="app-wrapper">
         <Header />
-        <Main state={props.state}  />
+        <Main state={props.state} addPost={props.addPost} updateNewPost={props.updateNewPost} updateDialogPost={props.updateDialogPost}  addNewDialog={props.addNewDialog}  />
       </div>
     </BrowserRouter>
   );

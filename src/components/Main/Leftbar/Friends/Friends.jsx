@@ -7,7 +7,7 @@ import ShowFriendname from './ShowFriendName/ShowFriendsName';
 const Friends =(props)=>{
   
     let friendsElements = props.state.friends.map(item=>{
-        return  <ShowFriendname name={item.name} url={item.url}/>
+        return  <ShowFriendname name={item.name} url={item.url} key={item.id}/>
     })
 
  

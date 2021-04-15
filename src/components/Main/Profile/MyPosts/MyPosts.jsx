@@ -1,14 +1,23 @@
 import s from "./MyPosts.module.scss";
 import Post from "./Post/Post";
+import React from "react";
 
 const MyPosts = (props) => {
- 
-
-  let myPostsElements = props.myPosts.map((el) => (<Post message={el.text} id={el.id} likeCount={el.count} />));
+  const textareaValue = React.createRef();
+  let myPostsElements = props.myPosts.map((item) => (
+    <Post message={item.text} id={item.id} likeCount={item.count} key={item.id} />
+  ));
+  const addPost=()=>{
+    props.addPost();
+    props.updateNewPost('');
+  }
+  const changePost=()=>{
+    props.updateNewPost(textareaValue.current.value);
+  }
   return (
     <div className={s.my_posts}>
-      <textarea name="" id="" cols="30" rows="10"></textarea>
-      <button className={s.btn}>Add post</button>
+      <textarea ref={textareaValue} onChange={changePost} name="" id="" cols="30" rows="10" value={props.newPostText}></textarea>
+      <button className={s.btn} onClick={addPost}>Add post</button>
       <div className={s.posts}>{myPostsElements}</div>
     </div>
   );
