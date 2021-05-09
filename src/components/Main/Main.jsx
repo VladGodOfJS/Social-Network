@@ -1,6 +1,7 @@
 import Leftbar from "./Leftbar/Leftbar";
 import Profile from "./Profile/Profile";
 import Dialogs from "./Dialogs/Dialogs";
+import DialogsContainer from "./Dialogs/DialogsContainer";
 import Music from "./Music/Music";
 import News from "./News/News";
 import Settings from "./Settings/Settings";
@@ -17,8 +18,8 @@ const Main=(props)=> {
         <div className={s.inner}>
           <Leftbar  state={props.state.leftBarPage} />
           <div className={s.content_wrapp}>
-             <Route path="/profile" render={()=> <Profile profilePage={props.state.profilePage} addPost={props.addPost} updateNewPost={props.updateNewPost}/>}/>
-             <Route path="/dialogs" render={()=> <Dialogs dialogsPage={props.state.dialogsPage} updateDialogPost={props.updateDialogPost}  addNewDialog={props.addNewDialog}/>}/>
+             <Route path="/profile" render={()=> <Profile store={props.store} />}/>
+             <Route path="/dialogs" render={()=> <DialogsContainer store={props.store}/>}/>
              <Route path="/news"render={()=> <News/>}/>
              <Route path="/music" render={()=> <Music/>}/>
              <Route path="/settings" render={()=> <Settings/>}/>

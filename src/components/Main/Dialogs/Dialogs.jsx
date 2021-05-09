@@ -3,26 +3,25 @@ import { NavLink } from "react-router-dom";
 import s from "./Dialogs.module.scss";
 import ShowDialogsName from "./ShowDialogsName/ShowDialogsName";
 import ShowMessage from "./ShowMessage/ShowMessage";
-
+import {addDialogActionCreator, changeDialogPostActionCreator} from "../../../redux/dialogs-reducer";
 
 const Dialogs = (props) => {
-
-  console.log(props);
- 
-  let dialogsElements = props.dialogsPage.names.map((el) => (
+  let dialogsElements = props.names.map((el) => (
     <ShowDialogsName name={el.name} id={el.id} key={el.id} />
   ));
-  let messagesElements = props.dialogsPage.messages.map((el) => (
+  let messagesElements = props.messages.map((el) => (
     <ShowMessage text={el.text} id={el.id} key={el.id} />
   ));
 
-  const textAreaValue= React.createRef();
-  
-  const changeDialogPost=()=>{
-    props.updateDialogPost(textAreaValue.current.value);
+  const textArea= React.createRef();
+
+  const changeDialogPost=()=>{  
+    let textAreaValue =textArea.current.value;
+    props.updateNewDialog(textAreaValue);
   }
-  const addPost=()=>{
-    props.addNewDialog(); 
+  
+  const onAddDialog=()=>{
+    props.addDialog();
   }
  
   return (
@@ -31,16 +30,16 @@ const Dialogs = (props) => {
       <div className={s.messages_wrapp}>
         <div> {messagesElements}</div>
         <div className={s.btn_wrapp}>
-          <textarea onChange={changeDialogPost} ref={textAreaValue}
+          <textarea onChange={changeDialogPost} ref={textArea}
             className={s.textarea}
             name=""
             id=""
             cols="30"
             rows="10"
             placeholder="Enter text"
-            value={props.dialogsPage.newDialogText}
+            value={props.newDialogText}
           ></textarea>
-          <button className={s.btn} onClick={addPost}>Submit</button>
+          <button className={s.btn} onClick={onAddDialog}>Submit</button>
         </div>
       </div>
     </div>
