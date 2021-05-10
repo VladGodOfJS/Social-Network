@@ -4,7 +4,6 @@ import {NavLink} from 'react-router-dom';
 import Friends from './Friends/Friends';
 
 const Leftbar =(props)=>{
-
     return(
        <div className={s.leftbar}>
            <ul className={s.nav} >
@@ -17,7 +16,7 @@ const Leftbar =(props)=>{
                <li className={s.item} ><NavLink className={s.link} activeClassName={s.active} to="/settings"> Settings</NavLink></li>
 
            </ul>
-           <Friends state={props.state}/>
+           <Friends store={props.store}/>
        </div>
     );
 }

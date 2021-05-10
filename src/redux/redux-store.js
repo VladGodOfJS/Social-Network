@@ -6,7 +6,7 @@ import leftbarReducer from "./leftbar-reducer";
 let reducers = combineReducers({
     dialogsPage:dialogsReducer,
     profilePage:profileReducer,
-    leftBarPage:leftbarReducer,
+    leftbarPage:leftbarReducer,
 })
 let store = createStore(reducers);
 

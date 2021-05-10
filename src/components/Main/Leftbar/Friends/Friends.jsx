@@ -5,8 +5,8 @@ import ShowFriendname from './ShowFriendName/ShowFriendsName';
 
 
 const Friends =(props)=>{
-  
-    let friendsElements = props.state.friends.map(item=>{
+    let state = props.store.getState();
+    let friendsElements =state.leftbarPage.friends.map(item=>{
         return  <ShowFriendname name={item.name} url={item.url} key={item.id}/>
     })
 

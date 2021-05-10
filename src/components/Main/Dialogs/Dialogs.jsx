@@ -1,15 +1,14 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import s from "./Dialogs.module.scss";
 import ShowDialogsName from "./ShowDialogsName/ShowDialogsName";
 import ShowMessage from "./ShowMessage/ShowMessage";
-import {addDialogActionCreator, changeDialogPostActionCreator} from "../../../redux/dialogs-reducer";
+
 
 const Dialogs = (props) => {
-  let dialogsElements = props.names.map((el) => (
+  let dialogsElements = props.dialogsPage.names.map((el) => (
     <ShowDialogsName name={el.name} id={el.id} key={el.id} />
   ));
-  let messagesElements = props.messages.map((el) => (
+  let messagesElements = props.dialogsPage.messages.map((el) => (
     <ShowMessage text={el.text} id={el.id} key={el.id} />
   ));
 

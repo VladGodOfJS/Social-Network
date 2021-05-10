@@ -1,6 +1,5 @@
 import Leftbar from "./Leftbar/Leftbar";
 import Profile from "./Profile/Profile";
-import Dialogs from "./Dialogs/Dialogs";
 import DialogsContainer from "./Dialogs/DialogsContainer";
 import Music from "./Music/Music";
 import News from "./News/News";
@@ -11,15 +10,14 @@ import s from "./Main.module.scss";
 
 
 const Main=(props)=> {
-
   return (
     <div className={s.main}>
       <div className="container">
         <div className={s.inner}>
-          <Leftbar  state={props.state.leftBarPage} />
+          <Leftbar  store={props.store} />
           <div className={s.content_wrapp}>
-             <Route path="/profile" render={()=> <Profile store={props.store} />}/>
-             <Route path="/dialogs" render={()=> <DialogsContainer store={props.store}/>}/>
+             <Route path="/profile" render={()=> <Profile />}/>
+             <Route path="/dialogs" render={()=> <DialogsContainer/>}/>
              <Route path="/news"render={()=> <News/>}/>
              <Route path="/music" render={()=> <Music/>}/>
              <Route path="/settings" render={()=> <Settings/>}/>
