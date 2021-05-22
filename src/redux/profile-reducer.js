@@ -15,6 +15,7 @@ let initialState ={
     },
   ],
   newPostText: " new post from post",
+  profile:null,
 }
 
 const profileReducer = (state =initialState, action) => {
@@ -41,6 +42,13 @@ const profileReducer = (state =initialState, action) => {
         newPostText:action.newPost,
       }
 
+      case "SET_USER_PROFILE":
+      
+        return{
+          ...state,
+          profile:action.profile
+        }
+
     default:
       return state;
   }
@@ -53,5 +61,9 @@ export const addPostActionCreator = () => {
 export const changePostActionCreator = (text) => {
   return { type: UPDATE_NEW_POST, newPost: text };
 };
+
+export const setUserProfile=(profile)=>{
+  return{type:"SET_USER_PROFILE",profile}
+}
 
 export default profileReducer;
