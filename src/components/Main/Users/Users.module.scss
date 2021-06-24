@@ -41,6 +41,9 @@
                 border: 1px solid #0d58c8;
                 color: #0d58c8;
             }
+            &:disabled{
+                background-color: #000;
+            }
         }
     }
 

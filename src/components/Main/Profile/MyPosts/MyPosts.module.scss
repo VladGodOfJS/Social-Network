@@ -1,27 +1,45 @@
-.my_posts{
-    display: flex;
-    flex-direction: column;
-    border: 1px solid;
-    padding: 0 10px;
+.my_posts {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid;
+  padding: 0 15px;
+
+  .posts {
+    background-color: #222835;
+    padding: 0 15px;
+    color: #fff;
+    border-radius: 6px;
+    margin-top: 20px;
+  }
+
+  .text_area {
+    max-width: 500px;
+    width: 100%;
+    outline: none;
+    border: none; 
+    border-bottom: 2px solid #222835;
+    color: #222835;
+    font-size: 16px;
+  }
 }
 
-.btn{
-    background: #0d58c8;
-    width: 140px;
-    height: 35px;
-    line-height: 32px;
-    margin-top: 20px;
-    border: 1px solid transparent;
-    border-radius: 3px;
-    outline: none;
-    color: #fff;
-    font-size: 14px;
-    
-    text-transform: uppercase;
-    cursor: pointer;
-    &:hover{
-        border: 1px solid #0d58c8;
-        transition: all ease .3s;
-        background: grey;
-    }
+.btn {
+  background: #0d58c8;
+  width: 140px;
+  height: 35px;
+  line-height: 32px;
+  margin-top: 20px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  outline: none;
+  color: #fff;
+  font-size: 14px;
+
+  text-transform: uppercase;
+  cursor: pointer;
+  &:hover {
+    border: 1px solid #0d58c8;
+    transition: all ease 0.3s;
+    background: grey;
+  }
 }

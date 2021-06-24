@@ -8,6 +8,7 @@ import UsersContainer from "./Users/UsersContainer";
 import { Route } from "react-router-dom";
 import s from "./Main.module.scss";
 import ProfileContainer from "./Profile/ProfileContainer";
+import Login from "./Login/Login";
 
 
 const Main=(props)=> {
@@ -23,6 +24,7 @@ const Main=(props)=> {
              <Route path="/music" render={()=> <Music/>}/>
              <Route path="/settings" render={()=> <Settings/>}/>
              <Route path="/users" render={()=> <UsersContainer/>}/>
+             <Route path="/login" render={()=> <Login/>}/>
           </div>
         </div>
       </div>

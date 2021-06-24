@@ -1,3 +1,17 @@
-.img{
+.post {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+
+  .img {
     width: 80px;
+    border-radius: 3px;
+  }
+
+  .post_text {
+    margin-left: 20px;
+  }
+  .like {
+    margin-left: 20px;
+  }
 }

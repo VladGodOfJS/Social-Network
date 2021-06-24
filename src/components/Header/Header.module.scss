@@ -3,4 +3,11 @@
 .inner {
   background: #222835;
   padding: 15px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.login_text{
+  color: #fff;
 }

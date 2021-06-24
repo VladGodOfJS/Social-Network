@@ -1,5 +1,7 @@
 import Preloader from "../../../common/Preloader/Preloader";
+import ProfileStatus from "./ProfileStatus";
 import s from "./ProfileInfo.module.scss";
+
 
 const ProfileInfo = (props) => {
   if (!props.profile) {
@@ -15,15 +17,34 @@ const ProfileInfo = (props) => {
         />
       </div>
       <div className={s.profile_items}>
-        <div className="job">{props.profile.lookingForAJob===true?<img src="https://png.pngtree.com/png-vector/20190704/ourlarge/pngtree-businessman-user-avatar-free-vector-png-image_1538405.jpg" alt="men"/>:<img src="https://as1.ftcdn.net/jpg/02/44/70/30/500_F_244703010_vYdL62triIFfjMH0dh8uAMATYhxKZhvK.jpg" alt="men"/>}</div>
-        <p>{props.profile.fullName}</p>
-        <a href={props.profile.contacts.facebook}>my page facebook</a>
-        
-        <div>
-          <img src={props.profile.photos.large} alt="avatar"/>
-          <div className="about-me">{props.profile.aboutMe}</div>
-          </div>
-        <h2 className={s.my_posts}>My Posts</h2>
+  
+        <div className={s.info}>
+        <div className={s.wrap_avatar}>
+          <img className={s.ava} src={props.profile.photos.large} alt="avatar" />
+          <a className={s.link} href={props.profile.contacts.facebook}>my page facebook</a>
+        </div>
+
+        <div className={s.job_status}>
+        <p className={s.fullname}>{props.profile.fullName}</p>
+        <ProfileStatus status={props.status} updateUserStatusThunkCreator={props.updateUserStatusThunkCreator} />
+        <div className={s.status}>{props.profile.aboutMe}</div>
+        <div className={s.border}></div>
+      
+          {props.profile.lookingForAJob === true ? (
+            <img className={s.img_job}
+              src="https://png.pngtree.com/png-vector/20190704/ourlarge/pngtree-businessman-user-avatar-free-vector-png-image_1538405.jpg"
+              alt="men"
+            />
+          ) : (
+            <img  className={s.img_job}
+              src="https://as1.ftcdn.net/jpg/02/44/70/30/500_F_244703010_vYdL62triIFfjMH0dh8uAMATYhxKZhvK.jpg"
+              alt="men"
+            />
+          )}
+        </div>
+        </div>
+     
+  
       </div>
     </div>
   );
