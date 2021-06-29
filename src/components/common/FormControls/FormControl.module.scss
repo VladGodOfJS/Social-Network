@@ -1,0 +1,21 @@
+
+
+.form_control{
+    display: flex;
+    flex-direction: column;
+    .span{
+        margin-top: 10px;
+    }
+}
+.form_control.error textarea {
+    border-bottom: 2px solid red;
+
+}
+
+.form_control span{
+   color: red;
+}
+
+.form_control.error input{
+    border: 2px solid red;
+ }

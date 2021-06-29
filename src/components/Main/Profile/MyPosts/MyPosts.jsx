@@ -2,8 +2,12 @@ import s from "./MyPosts.module.scss";
 import Post from "./Post/Post";
 import React from "react";
 import { Field,reduxForm } from "redux-form";
+import { required } from "../../../../utils/validators/validators";
+import { maxLengthCreator } from "../../../../utils/validators/validators";
+import { Textarea } from "../../../common/FormControls/FormControls";
 
 
+let maxLength30 = maxLengthCreator(30);
 const MyPosts = (props) => {
   const textareaValue = React.createRef();
   let myPostsElements = props.myPosts.map((item) => (
@@ -11,7 +15,6 @@ const MyPosts = (props) => {
   ));
 
   const addNewPost=(values)=>{
-       console.log(values.newPostText);
        props.addPost(values.newPostText);
   }
   
@@ -27,7 +30,7 @@ const MyPosts = (props) => {
 const MyPostForm=(props)=>{
   return(
     <form onSubmit={props.handleSubmit}>
-      <Field component={"textarea"} name={"newPostText"} className={s.text_area}  id="" cols="10" rows="3" ></Field>
+      <Field component={Textarea} placeholder="enter Post" validate={[required,maxLength30]} name={"newPostText"} className={s.text_area}  id="" cols="10" rows="3" ></Field>
       <button className={s.btn}>Add post</button>
     </form>
   );

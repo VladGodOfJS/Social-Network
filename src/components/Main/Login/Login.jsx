@@ -1,19 +1,27 @@
 import s from "./Login.module.scss";
 import { Field, reduxForm } from "redux-form";
-import * as axios from "axios";
-
+import { Input } from "../../common/FormControls/FormControls";
+import { required } from "../../../utils/validators/validators";
+import { connect } from "react-redux";
+import { loginThunkCreator } from "../../../redux/auth-reducer";
+import { Redirect } from "react-router";
 
 const LoginForm = (props) => {
-
   return (
     <form onSubmit={props.handleSubmit} class={s.form}>
-      <Field placeholder={"enter Name"} component={"input"} name={"login"} />
       <Field
+        validate={[required]}
+        placeholder={"enter Name"}
+        component={Input}
+        name={"login"}
+      />
+      <Field
+        validate={[required]}
         placeholder={"enter Password"}
-        component={"input"}
+        component={Input}
         name={"password"}
       />
-      <Field type={"checkbox"} component={"input"} name={"rememberMe"} />
+      <Field type={"checkbox"} component={Input} name={"rememberMe"} />
       <button>Enter</button>
     </form>
   );
@@ -22,21 +30,18 @@ const LoginForm = (props) => {
 let LoginReduxForm = reduxForm({ form: "login" })(LoginForm);
 
 const Login = (props) => {
-    const onSubmit=(formData)=>{
-      console.log(formData)
-      axios.post("https://social-network.samuraijs.com/api/1.0/auth/login",{email:"vladka910@gmail.com",password:"gfhjkmgf"},{},
-      {
-        withCredentials: true,
-        headers: {
-          "API-KEY": "286ace4f-96ef-49d4-9438-e02eac859f28",
-        },
-      }
-      ).then(resp=>{
-        return console.log(resp.data);
-      })
-      
-    }
+  const onSubmit = (formData) => {
+    props.loginThunkCreator(
+      formData.login,
+      formData.password,
+      formData.rememberMe
+    );
+    
+  };
+
+   
   return (
+    props.isAuth?<Redirect to={'/profile'}/>:
     <div className="login">
       <h2>Login</h2>
       <LoginReduxForm onSubmit={onSubmit} />
@@ -44,4 +49,10 @@ const Login = (props) => {
   );
 };
 
-export default Login;
+const mapStateToProps = (state) => {
+  return {
+    isAuth: state.auth.isAuth,
+  };
+};
+
+export default connect(mapStateToProps, { loginThunkCreator })(Login);

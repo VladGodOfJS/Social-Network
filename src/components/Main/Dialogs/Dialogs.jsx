@@ -1,12 +1,12 @@
 import React from "react";
-import { Redirect } from "react-router";
 import s from "./Dialogs.module.scss";
 import ShowDialogsName from "./ShowDialogsName/ShowDialogsName";
 import ShowMessage from "./ShowMessage/ShowMessage";
 import { Field, reduxForm } from "redux-form";
-
-
-
+import { Textarea } from "../../common/FormControls/FormControls";
+import { required } from "../../../utils/validators/validators";
+import { maxLengthCreator } from "../../../utils/validators/validators";
+let maxLength15 = maxLengthCreator(15);
 
 const Dialogs = (props) => {
   let dialogsElements = props.dialogsPage.names.map((el) => (
@@ -42,7 +42,7 @@ const Dialogs = (props) => {
 const AddDialogForm = (props) => {
   return (
     <form onSubmit={props.handleSubmit}>
-      <Field component={"textarea"} name={"newDialogText"} placeholder={"Enter Text"}></Field>
+      <Field component={Textarea} validate={[required,maxLength15]} name={"newDialogText"} placeholder={"Enter Text"}></Field>
       <button className={s.btn}>
         Submit
       </button>

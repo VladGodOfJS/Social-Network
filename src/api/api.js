@@ -51,11 +51,13 @@ export const authAPI = {
       return response.data;
     });
   },
+ 
+  login(email,password,rememberMe){
+    return instance.post(`${baseUrl}auth/login`,{email,password,rememberMe})
+  },
+  logout(){
+    return instance.delete(`${baseUrl}auth/login`)
 
-  getLogin(){
-    return axios.post(`https://social-network.samuraijs.com/api/1.0/auth/login`).then(response=>{
-      console.log(response);
-    })
   }
 };
 
